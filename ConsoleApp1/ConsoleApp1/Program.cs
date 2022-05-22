@@ -8,9 +8,9 @@ namespace ConsoleApp1
         static void Main()
         {
             Dictionary<string, string> workers = new Dictionary<string, string>();
-            workers.Add("Ivanov ivan ivanovich", "Ceo");
-            workers.Add("Petrov Petr Petrovich", "HR");
-            workers.Add("Vasiliev Vasiliy Vaslilevich", "Cteo");
+            workers.Add("Ivan", "Ceo");
+            workers.Add("Petr", "HR");
+            workers.Add("Vasiliy", "Cteo");
             bool isWorking = true;
 
             while (isWorking)
@@ -69,8 +69,18 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Какое досье вы хотите удалить?");
             string input = Console.ReadLine();
-            workers.Remove(input);
+            if (workers.ContainsKey(input))
+            {
+                workers.Remove(input);
+            }
+            else
+            {
+                Console.WriteLine("Не обнаруженно");
+                Console.ReadKey();
+            }
+
         }
+
         static void Exit(ref bool isWorking)
         {
             isWorking = false;
