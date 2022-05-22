@@ -69,6 +69,7 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Какое досье вы хотите удалить?");
             string input = Console.ReadLine();
+
             if (workers.ContainsKey(input))
             {
                 workers.Remove(input);
